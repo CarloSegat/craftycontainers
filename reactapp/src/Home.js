@@ -4,6 +4,9 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import logo from "./logo192.png";
+import {
+  Link
+} from "react-router-dom";
 
 export default class Configurator extends Component {
 
@@ -17,24 +20,8 @@ export default class Configurator extends Component {
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo"/>
             <p>Welcome to Crafty Containers</p>
-            <a
-                style={{cursor: "pointer"}}
-                href={null}
-                onClick={() =>
-                    this.showShop()
-                }
-            >
-              SHOP
-            </a>
-            <a
-                style={{cursor: "pointer"}}
-                href={null}
-                onClick={() =>
-                    this.showConfigurator()
-                }
-            >
-              CONFIGURATOR
-            </a>
+            <Link className="notShittyLink" to="/shop">SHOP</Link>
+            <Link className="notShittyLink" to="/conf">CONFIGURATOR</Link>
           </header>
         </div>
     );

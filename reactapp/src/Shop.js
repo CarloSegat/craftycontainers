@@ -12,7 +12,7 @@ export default class Configurator extends Component {
 
   render() {
     return (
-        <div><p>Configurator</p></div>
+        <div><p>Shop!</p></div>
     );
   }
 }

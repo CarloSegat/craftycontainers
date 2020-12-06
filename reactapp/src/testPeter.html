@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>test1</title>
+    <link rel="stylesheet" type="text/css" href="https://libs.paramate.trinckle.com/paramateViewport-latest.css">
+    <script src="https://libs.paramate.trinckle.com/paramateConfigurator-latest.js"></script>
+    <script src="https://libs.paramate.trinckle.com/paramateControlsAuto-latest.js"></script>
+    <script src="https://libs.paramate.trinckle.com/paramateViewportWebGL-latest.js"></script>
+</head>
+<body>
+
+<div id="controls"></div>
+<div id="viewPort" style="width: 1000px; height: 500px; float: right"></div>
+<script>
+    var configurator
+    var viewPort
+    var controls
+
+    window.onload = function(){
+
+        // Create configurator object
+        configurator = new Paramate.Configurator({
+            APIHub: 'https://api.paramate.trinckle.com',
+            configuratorId: 'a5e52b93-1a69-4468-9ae1-8d7c1594d77f',
+            APIKey: '722914abbb281487206ae7b2cd1dce7f'
+        });
+
+        // Create controls object
+        viewPort = new Paramate.ViewportWebGL({
+            configurator: configurator,
+            viewportElement: document.getElementById('viewPort')
+        });
+
+        // Create controls object
+        controls = new Paramate.ControlsAuto({
+            configurator: configurator,
+            containerElement: document.getElementById('controls')
+        });
+
+        // Register viewport and controls
+        configurator.viewPort = viewPort;
+        configurator.controls = controls;
+
+        // Start configurator
+        configurator.initialize();
+    }
+</script>
+</body>
+</html>
